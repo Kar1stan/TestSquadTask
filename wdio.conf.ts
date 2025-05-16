@@ -7,6 +7,7 @@ export const config: WebdriverIO.Config = {
     runner: 'local',
     tsConfigPath: './tsconfig.json',
     baseUrl: 'https://webdriver.io',
+    headless: true,
     
     //
     // ==================
