@@ -55,8 +55,8 @@ export const config: WebdriverIO.Config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-  args: ['--headless','--user-data-dir=/tmp/chrome-profile-' + Date.now()]
-}
+         args: ['--headless', '--disable-gpu', '--no-sandbox']
+         }
     }],
     
     //
