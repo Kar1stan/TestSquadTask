@@ -7,7 +7,6 @@ export const config: WebdriverIO.Config = {
     runner: 'local',
     tsConfigPath: './tsconfig.json',
     baseUrl: 'https://webdriver.io',
-    headless: true,
     
     //
     // ==================
@@ -54,9 +53,12 @@ export const config: WebdriverIO.Config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+  args: ['--headless','--user-data-dir=/tmp/chrome-profile-' + Date.now()]
+}
     }],
-
+    
     //
     // ===================
     // Test Configurations
