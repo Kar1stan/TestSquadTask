@@ -4,6 +4,7 @@ import MainPage from  '../pageobjects/Main.page';
 describe('Webriver.io test', () => {
     beforeEach(() => {
         MainPage.visitUrl();
+        MainPage.clickNavigationButton();
         MainPage.clickAPIBtn();
     })
 
@@ -17,11 +18,11 @@ describe('Webriver.io test', () => {
     });
 
     it('Should check Search input', async () => {
-        await WebdriverPage.clickAndFillSearch("all is done")
-        await WebdriverPage.closeSearch()
+        await WebdriverPage.clickAndFillSearch("all is done");
+        await WebdriverPage.closeSearch();
     });
 
-     it('Should check API Reference', async () => {
+    it('Should check API Reference', async () => {
         await WebdriverPage.scrollAPIReference()
         await expect (WebdriverPage.APIReference).toBeDisplayed()
     });
@@ -31,6 +32,7 @@ describe('Webriver.io test', () => {
     });
 
     it('Should check if Webdriver Protocol header is displayed', async () => {
+        await WebdriverPage.clickProtocolCommandsBtn();
         await WebdriverPage.webdriverProtocalHeader.waitUntil(async()=>{
             return (await expect (WebdriverPage.webdriverProtocalHeader).toBeDisplayed(),{timeout: 2000,timeoutMsg: 'expected to be displayed after 2s'})
         })

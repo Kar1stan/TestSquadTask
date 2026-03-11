@@ -1,13 +1,10 @@
-import { ChainablePromiseElement } from 'webdriverio';
-
-
 class WebdriverPage {
     get introductionHeader(){
         return $("//h1[text()='Introduction']")
     }
 
     get introductionLabel(){
-        return $("//span[text()='Introduction']")
+        return $("ul[class='breadcrumbs']>li~li")
     }
 
      get webdriverLink(){
@@ -22,7 +19,7 @@ class WebdriverPage {
         return $("input[type='search']")
     }
 
-     get xSign(){
+    get xSign(){
         return $("path[d='M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z']")
     }
 
